@@ -14,7 +14,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  resource-group: ' rg-eshoponweb-secure'
+  resource-group: 'rg-eshoponweb-secure'
   location: 'westeurope'
   templateFile: 'infra/acr.bicep'
   azureserviceconnection: 'azure-subs'
