@@ -50,9 +50,7 @@ stages:
         pwsh: false
         targetType: 'inline'
         script: |
-          Remove-TypeData -TypeName System.Security.AccessControl.ObjectSecurity -ErrorAction SilentlyContinue
-          Import-Module Microsoft.PowerShell.Security -ErrorAction Stop
-          $var=ConvertFrom-Json '$(acr-json)'
+          $var = @'$(acr-json)'@ | ConvertFrom-Json
           $value=$var.acrloginServer.value
           Write-Host "##vso[task.setvariable variable=acrloginserver;]$value"
           Write-Host "ACR Login Server: $value"
