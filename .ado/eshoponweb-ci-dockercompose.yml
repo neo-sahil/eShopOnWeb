@@ -50,6 +50,8 @@ stages:
         pwsh: false
         targetType: 'inline'
         script: |
+          Write-Host "PSVersion: $($PSVersionTable.PSVersion)"
+          Write-Host "Host: $($Host.Name)"
           $var = @'$(acr-json)'@ | ConvertFrom-Json
           $value=$var.acrloginServer.value
           Write-Host "##vso[task.setvariable variable=acrloginserver;]$value"
