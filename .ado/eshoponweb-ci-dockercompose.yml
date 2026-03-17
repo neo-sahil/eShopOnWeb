@@ -52,7 +52,7 @@ stages:
           $var=ConvertFrom-Json '$(acr-json)'
           $value=$var.acrloginServer.value
           Write-Host "##vso[task.setvariable variable=acrloginserver;]$value"
-          echo $acrloginserver
+          Write-Host "ACR Login Server: $value"
     # docker compose build images
     - task: DockerCompose@1
       displayName: Build Docker Compose
