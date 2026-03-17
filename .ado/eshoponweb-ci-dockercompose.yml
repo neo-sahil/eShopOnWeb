@@ -53,7 +53,7 @@ stages:
           $value=$var.acrloginServer.value
           Write-Host "##vso[task.setvariable variable=acrloginserver;]$value"
           Write-Host "ACR Login Server: $value"
-        pwsh: false
+          
     # docker compose build images
     - task: DockerCompose@1
       displayName: Build Docker Compose
