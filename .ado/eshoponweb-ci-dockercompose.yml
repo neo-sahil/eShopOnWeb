@@ -47,6 +47,7 @@ stages:
     - task: PowerShell@2
       displayName: Parse Bicep Output
       inputs:
+        pwsh: false
         targetType: 'inline'
         script: |
           $var=ConvertFrom-Json '$(acr-json)'
